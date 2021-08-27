@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sample Form </title>
+</head>
+
+<body>
+    <div style="margin-left: 30% ; margin-right:  30%; 
+     background-color: rgb(133, 133, 112); text-align: center">
+
+        <form id="sampleform" onsubmit="saveDetails()">
+            FirstName : <input type="text" id="FirstName" placeholder="FirstName"><br>
+            LastName : <input type="text" id="LastName" placeholder="LastName"><br>
+            Email : <input type="text" id="email" placeholder="email" required="true"><br>
+            Password : <input type="password" id="password" id="password"><br>
+            Choose your Salary : <input type="range" id="salary" min="0" max="10000">
+            Joining Date: <input type="date" id="">
+            <input type="button" onclick="saveDetails()" value="Submit">
+            <!-- <button onclick="saveDetails()" > Submit </button> -->
+
+        </form>
+    </div>
+    <script>
+        function saveDetails() {
+            let firstName = document.getElementById("FirstName").value;
+            console.log(document.getElementById("FirstName").value);
+            let nameregex = RegExp('^[A-Z]{1}[a-z]{3,}$')
+            if (!nameregex.test(firstName)) {
+                alert("FirstName is invalid, It should start with Upper Case and have atleast 4 char");
+                return false;
+            }
+            console.log(document.getElementById("LastName").value);
+            let email = document.getElementById("email").value;
+            console.log(document.getElementById("email").value);
+        }
+    </script>
+</body>
+
+
+
+</html>
